@@ -1,13 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Suspense } from 'react';
 
 import { findPizzas } from '@/shared/lib';
-import { GetSearchParams } from '@/shared/lib/find-pizzas';
 
-import {
-    Container, Filters, ProductsGroupList, Stories, Title, TopBar
-} from '../../shared/components/shared';
+import { Container, Filters, ProductsGroupList, Stories, Title, TopBar } from '../../shared/components/shared';
 
-export default async function Home({ searchParams }: { searchParams: GetSearchParams }) {
+export default async function Home({ searchParams }: any) {
   const categories = await findPizzas(searchParams);
 
   return (

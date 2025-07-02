@@ -1,8 +1,10 @@
-import { prisma } from '@/prisma/prisma-client';
-import { ChooseModalProduct } from '@/shared/components/shared';
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { notFound } from 'next/navigation';
 
-export default async function ProductModalPage({ params: { id } }: { params: { id: string } }) {
+import { prisma } from '@/prisma/prisma-client';
+import { ChooseModalProduct } from '@/shared/components/shared';
+
+export default async function ProductModalPage({ params: { id } }: any) {
   const product = await prisma.product.findFirst({
     where: {
       id: Number(id),

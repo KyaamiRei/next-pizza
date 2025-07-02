@@ -26,10 +26,6 @@ export const Header: React.FC<Props> = ({ className, hasCart = true, hasSearch =
   React.useEffect(() => {
     let toastMessage = '';
 
-    if (searchParams.has('paid')) {
-      toastMessage = 'Заказ успешно оплачен! Информация отправлена на почту.';
-    }
-
     if (searchParams.has('verified')) {
       toastMessage = 'Почта успешно подтверждена!';
     }

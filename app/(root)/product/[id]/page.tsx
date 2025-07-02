@@ -1,9 +1,10 @@
-import { Container, ProductForm } from '@/shared/components/shared';
-import { prisma } from '@/prisma/prisma-client';
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { notFound } from 'next/navigation';
-import React from 'react';
 
-export default async function ProductPage({ params: { id } }: { params: { id: string } }) {
+import { prisma } from '@/prisma/prisma-client';
+import { Container, ProductForm } from '@/shared/components/shared';
+
+export default async function ProductPage({ params: { id } }: any) {
   const product = await prisma.product.findFirst({
     where: { id: Number(id) },
     include: {
@@ -27,7 +28,7 @@ export default async function ProductPage({ params: { id } }: { params: { id: st
 
   return (
     <Container className='flex flex-col my-10'>
-      <ProductForm product={product}/>
+      <ProductForm product={product} />
     </Container>
   );
 }
