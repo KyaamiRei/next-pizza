@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 
+import { Suspense } from 'react';
+
 import { Header } from '../../shared/components/shared';
 
 export const metadata: Metadata = {
@@ -21,7 +23,9 @@ export default function HomeRootLayout({
 }>) {
   return (
     <main className='min-h-screen'>
-      <Header />
+      <Suspense>
+        <Header />
+      </Suspense>
       {children}
       {modal}
     </main>

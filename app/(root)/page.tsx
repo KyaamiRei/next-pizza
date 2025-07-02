@@ -3,7 +3,9 @@ import { Suspense } from 'react';
 
 import { findPizzas } from '@/shared/lib';
 
-import { Container, Filters, ProductsGroupList, Stories, Title, TopBar } from '../../shared/components/shared';
+import {
+    Container, Filters, ProductsGroupList, Stories, Title, TopBar
+} from '../../shared/components/shared';
 
 export default async function Home({ searchParams }: any) {
   const categories = await findPizzas(searchParams);
